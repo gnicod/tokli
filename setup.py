@@ -7,7 +7,7 @@ setup(name='tokli',
       license='MIT',
       packages=['tokli'],
       install_requires=[
-          'requests','requests_oauthlib','oauthlib'
+          'requests', 'requests_oauthlib', 'oauthlib'
       ],
       scripts=['bin/tokli'],
       zip_safe=False)

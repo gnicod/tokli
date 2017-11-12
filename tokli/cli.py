@@ -1,4 +1,6 @@
-import click, json,sys
+import click
+import json
+import sys
 from tokli.config import Config
 from tokli.api import Api
 from tokli.exceptions import ConfigNameUnknown
@@ -8,14 +10,17 @@ from tokli.exceptions import ConfigNameUnknown
 def cli_list():
     pass
 
+
 @cli_list.command()
 def list():
     """List all configured apis"""
     print(json.dumps(Config.get_apis()['apis'], indent=4, sort_keys=True))
 
+
 @click.group()
 def cli_get():
     pass
+
 
 @cli_get.command()
 @click.argument('name')

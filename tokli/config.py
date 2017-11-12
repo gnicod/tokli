@@ -2,6 +2,7 @@ import yaml
 from os.path import expanduser
 from tokli.exceptions import ConfigNameUnknown
 
+
 class Config():
 
     @staticmethod
@@ -20,4 +21,3 @@ class Config():
         except KeyError:
             raise ConfigNameUnknown
         return config
-
