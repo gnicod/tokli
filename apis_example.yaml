@@ -1,0 +1,8 @@
+apis:
+    test_dev:
+        api_url: http://localhost/api
+        api_token_url: http://localhost/oauth/v2/token
+        grant_type: client_credentials
+        client_id: 1
+        client_secret: 1mvq18quqjr4s08w
+

@@ -1,0 +1,2 @@
+class ConfigNameUnknown(Exception):
+    pass
