@@ -24,10 +24,14 @@ def cli_get():
 
 @cli_get.command()
 @click.argument('name')
-def get(name):
+@click.option('--refresh', is_flag=True)
+def get(name, refresh):
     """retrieve a token """
     try:
-        api = Api(**Config.get_config_api(name))
+        api = Api(
+            **Config.get_config_api(name),
+            name=name,
+            force_refresh=refresh)
     except ConfigNameUnknown:
         print('Config name %s does not exist' % name)
         sys.exit(2)
