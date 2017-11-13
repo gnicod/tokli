@@ -5,4 +5,6 @@ apis:
         grant_type: client_credentials
         client_id: 1
         client_secret: 1mvq18quqjr4s08w
+        extra_vars:
+            audience: demo
 
