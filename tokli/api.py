@@ -16,12 +16,14 @@ class Api():
                  client_id=None,
                  client_secret=None,
                  grant_type='client_credentials',
+                 extra_vars={},
                  force_refresh=False):
         self.api_token_url = api_token_url
         self.client_id = client_id
         self.client_secret = client_secret
         self.grant_type = grant_type
         self.name = name
+        self.extra_vars = extra_vars
         self.force_refresh = force_refresh
 
     def get_cached_token(self, name):
@@ -53,7 +55,8 @@ class Api():
         token = oauth.fetch_token(
             token_url=self.api_token_url,
             client_id=self.client_id,
-            client_secret=self.client_secret)
+            client_secret=self.client_secret,
+            **self.extra_vars)
         if 'access_token' in token:
             with open(self.tokens_file, 'r+') as stream:
                 data = json.load(stream)
